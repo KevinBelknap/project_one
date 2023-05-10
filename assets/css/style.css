@@ -142,10 +142,12 @@
   h1 {
     --font-size: 2rem;
     --typography-spacing-vertical: 3rem;
+    text-align: center;
   }
   
-  h2 {
+  nav {
     --font-size: 1.75rem;
+    text-align: center;
     --typography-spacing-vertical: 2.625rem;
   }
   
