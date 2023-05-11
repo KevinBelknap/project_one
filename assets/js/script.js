@@ -54,12 +54,8 @@ searchInput.addEventListener('keypress', (e) => {
 function getNewsData() {
   fetch(newsApiKey)
     .then(response => response.json())
-    .then(data => {
-      updateNewsInfo(data);
-    })
-    .catch(error => {
-      console.error('Error fetching news data:', error);
-    });
+    .then
+     console.log(data);
 }
 
 
