@@ -1,5 +1,7 @@
 const apiKey = '8cf59100d539bf9363c2f7f6beb01c19';
-const apiUrl = `http://api.mediastack.com/v1/news?access_key=${apiKey}&languages=en`;
+const newsApiKey ='8aaac5d710ff7de69478231a29c8c791'
+const newApiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY"
+const apiUrl = `http://api.mediastack.com/v1/news?access_key=8aaac5d710ff7de69478231a29c8c791$&languages=en`;
 
 const WapiKey = '3281a39a9dd34bdcb0704239230905';
 const locationEl = document.querySelector('.location');
@@ -47,3 +49,17 @@ searchInput.addEventListener('keypress', (e) => {
     }
   }
 });
+
+
+function getNewsData() {
+  fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${newsApiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      updateNewsInfo(data);
+    })
+    .catch(error => {
+      console.error('Error fetching news data:', error);
+    });
+}
+
+
