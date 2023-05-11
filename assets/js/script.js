@@ -46,4 +46,3 @@ searchInput.addEventListener('keypress', (e) => {
       searchInput.value = '';
     }
   }
-});
