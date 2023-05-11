@@ -21,9 +21,9 @@ function getWeatherData(location) {
 
 function updateWeatherInfo(data) {
     locationEl.textContent = `Location: ${data.location.name}, ${data.location.country}`;
-    temperatureEl.textContent = `Temperature: ${data.current.temp_c}°C`;
+    temperatureEl.textContent = `Temperature: ${data.current.temp_f}°F`;
     conditionEl.textContent = `Condition: ${data.current.condition.text}`;
-}
+  }
 
 // Set default location
 getWeatherData('New York');
