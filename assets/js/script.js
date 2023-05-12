@@ -11,77 +11,40 @@ const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 
 function getWeatherData(location) {
-  fetch(`https://api.weatherapi.com/v1/current.json?key=${WapiKey}&q=${location}`)
-    .then(response => response.json())
-    .then(data => {
-      updateWeatherInfo(data);
-    })
-    .catch(error => {
-      console.error('Error fetching weather data:', error);
-    });
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${WapiKey}&q=${location}`)
+        .then(response => response.json())
+        .then(data => {
+            updateWeatherInfo(data);
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
 }
 
 function updateWeatherInfo(data) {
-  locationEl.textContent = `Location: ${data.location.name}, ${data.location.country}`;
-  temperatureEl.textContent = `Temperature: ${data.current.temp_c}°C`;
-  conditionEl.textContent = `Condition: ${data.current.condition.text}`;
-}
+    locationEl.textContent = `Location: ${data.location.name}, ${data.location.country}`;
+    temperatureEl.textContent = `Temperature: ${data.current.temp_f}°F`;
+    conditionEl.textContent = `Condition: ${data.current.condition.text}`;
+  }
 
 // Set default location
 getWeatherData('New York');
 
 // Handle search button click
 searchButton.addEventListener('click', () => {
-  const location = searchInput.value;
-  if (location) {
-    getWeatherData(location);
-    searchInput.value = '';
-  }
+    const location = searchInput.value;
+    if (location) {
+        getWeatherData(location);
+        searchInput.value = '';
+    }
 });
 
 // Handle enter key press in search input
 searchInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    const location = searchInput.value;
-    if (location) {
-      getWeatherData(location);
-      searchInput.value = '';
+    if (e.key === 'Enter') {
+        const location = searchInput.value;
+        if (location) {
+            getWeatherData(location);
+            searchInput.value = '';
+        }
     }
-  }
-});
-
-
-function getNewsData() {
-  fetch(newsApiKey)
-    .then(response => response.json())
-    .then
-     console.log(data);
-}
-
-const commentForm = document.getElementById("comment-form");
-const commentInput = document.getElementById("comment");
-const nameInput = document.getElementById("name");
-const commentsDiv = document.getElementById("comments");
-
-commentForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  // Create a new comment div
-  const newCommentDiv = document.createElement("div");
-  newCommentDiv.classList.add("comment");
-
-  // Add the name and comment text to the div
-  const name = nameInput.value.trim();
-  const comment = commentInput.value.trim();
-  newCommentDiv.innerHTML = `
-    <h4>${name}</h4>
-    <p>${comment}</p>
-  `;
-
-  // Append the new comment div to the comments container
-  commentsDiv.appendChild(newCommentDiv);
-
-  // Clear the form inputs
-  nameInput.value = "";
-  commentInput.value = "";
-});
