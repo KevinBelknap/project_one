@@ -58,4 +58,30 @@ function getNewsData() {
      console.log(data);
 }
 
+const commentForm = document.getElementById("comment-form");
+const commentInput = document.getElementById("comment");
+const nameInput = document.getElementById("name");
+const commentsDiv = document.getElementById("comments");
 
+commentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  // Create a new comment div
+  const newCommentDiv = document.createElement("div");
+  newCommentDiv.classList.add("comment");
+
+  // Add the name and comment text to the div
+  const name = nameInput.value.trim();
+  const comment = commentInput.value.trim();
+  newCommentDiv.innerHTML = `
+    <h4>${name}</h4>
+    <p>${comment}</p>
+  `;
+
+  // Append the new comment div to the comments container
+  commentsDiv.appendChild(newCommentDiv);
+
+  // Clear the form inputs
+  nameInput.value = "";
+  commentInput.value = "";
+});
