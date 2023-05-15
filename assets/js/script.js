@@ -31,7 +31,7 @@ function updateWeatherInfo(data) {
 
     // Append the icon to the condition element
     conditionEl.appendChild(weatherIcon);
-}
+  }
 
 // Set default location
 getWeatherData('New York');
