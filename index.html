@@ -1,60 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get your News here</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!-- this is weather and news api's both need to be added via js-->
-    <link href="https://www.weatherapi.com/" rel="stylesheet">
-    <link href="https://newsapi.org/" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allstar News</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
-
-<!-- This a basic HTML file example-->
 <body>
-    <header>
-      <h1>My Website</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+  <style>
+    /*icon styles*/
+    .fi-social-facebook {
+      color: dodgerblue;
+      font-size: 2rem;
+    }
+    .fi-social-youtube {
+      color: red;
+      font-size: 2rem;
+    }
+    .fi-social-pinterest {
+      color: darkred;
+      font-size: 2rem;
+    }
+    i.fi-social-instagram {
+      color: brown;
+      font-size: 2rem;
+    }
+    i.fi-social-tumblr {
+      color: navy;
+      font-size: 2rem;
+    }
+    .fi-social-twitter {
+      color: skyblue;
+      font-size: 2rem;
+    }
+  </style>
+  <header>
+    <!-- Sub Navigation -->
+    <div class="top-bar">
+      <!---This needs to be brought down a bit -->
+      <div class="top-bar-left">
+        <div class="weather-info">
+          <span class="location">Location: </span>
+          <span class="temperature">Temperature: </span>
+          <span class="condition">Condition: </span>
+        </div>        
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><input type="search" id="search-input" placeholder="Search"></li>
+            <li><button type="button" id="search-button" class="button">Search</button></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /Sub Navigation -->
+      <!-- logo and ad break -->
+      <div class="row">
+        <div class="medium-8 columns">
+          <img src="assets/header.jpg" alt="advertisement for deep fried Twinkies">
+        </div>
+      </div>
+      <div class="top-bar" id="main-menu">
+        <ul class="menu vertical medium-horizontal expanded medium-text-center"
+          data-responsive-menu="drilldown medium-dropdown">
+          <li class="has-submenu"><a href="#">Tech</a>
+            <ul class="submenu menu vertical" data-submenu>
+              <li><a href="#">One</a></li>
+              <li><a href="#">Two</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Energy</a>
+            <ul class="submenu menu vertical" data-submenu>
+              <li><a href="#">One</a></li>
+              <li><a href="#">Two</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Space</a>
+            <ul class="submenu menu vertical" data-submenu>
+              <li><a href="#">One</a></li>
+              <li><a href="#">Two</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Medicine</a>
+            <ul class="submenu menu vertical" data-submenu>
+              <li><a href="#">One</a></li>
+              <li><a href="#">Two</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Robotics</a>
+            <ul class="submenu menu vertical" data-submenu>
+              <li><a href="#">One</a></li>
+              <li><a href="#">Two</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Tesla</a>
+            <ul class="submenu menu vertical" data-submenu>
+              <li><a href="#">One</a></li>
+              <li><a href="#">Two</a></li>
+              <li><a href="#">Three</a></li>
+            </ul>
+          </li>
         </ul>
-      </nav>
-    </header>
-
-    <main>
-      <article>
-        <header>
-          <h2>Article Title</h2>
-          <p>By <a href="#">Author Name</a></p>
-          <time datetime="2023-05-09">May 9, 2023</time>
-        </header>
-        <section>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ultricies purus, quis posuere eros. Nulla id sem vel est maximus scelerisque eu non dolor. Sed in varius purus, eu malesuada velit. Duis rhoncus odio ut lorem luctus, vel commodo turpis tempus.</p>
-          <p>Aliquam suscipit congue ante, ut scelerisque augue vestibulum ut. In hac habitasse platea dictumst. Sed elementum risus velit, sed blandit mauris bibendum vitae. Maecenas ultrices iaculis nunc, nec placerat mi fringilla vel. Nam sollicitudin ante ligula, vitae tincidunt quam varius vel. Donec sed sem quis enim consequat luctus. Vestibulum id ligula sit amet tortor ullamcorper maximus.</p>
-        </section>
-        <footer>
-          <p><a href="#">Read more</a></p>
-        </footer>
-      </article>
-
-      <aside>
-        <h2>Related Articles</h2>
-        <ul>
-          <li><a href="#">Article 1</a></li>
-          <li><a href="#">Article 2</a></li>
-          <li><a href="#">Article 3</a></li>
+      </div>
+  </header>
+  <br>
+  <div class="row">
+    <div class="medium-8 columns">
+      <p><img src="https://placehold.it/900x450&text=Promoted Article" alt="main article image"></p>
+    </div>
+    <div class="medium-4 columns">
+      <p><img src="https://placehold.it/400x200&text=Other cool article" alt="article promo image"
+          alt="advertisement for deep fried Twinkies"></p>
+      <p><img src="https://placehold.it/400x200&text=Other cool article" alt="article promo image"></p>
+    </div>
+  </div>
+  <hr>
+  <div class="row column">
+    <h4 style="margin: 0;" class="text-center">BREAKING NEWS</h4>
+  </div>
+  <hr>
+  <div class="row small-up-3 medium-up-4 large-up-5">
+<!--Replace with article HTMl Links and pictures-->
+    <div class="column">
+      <img src="https://placehold.it/400x370&text=Look at me!" alt="image for article">
+    </div>
+    <div class="column">
+      <img src="https://placehold.it/400x370&text=Look at me!" alt="image for article">
+    </div>
+    <div class="column">
+      <img src="https://placehold.it/400x370&text=Look at me!" alt="image for article">
+    </div>
+    <div class="column show-for-medium">
+      <img src="https://placehold.it/400x370&text=Look at me!" alt="image for article">
+    </div>
+    <div class="column show-for-large">
+      <img src="https://placehold.it/400x370&text=Look at me!" alt="image for article">
+    </div>
+  </div>
+  <hr>
+  <footer>
+    <div class="row expanded callout secondary">
+      <div class="large-4 columns">
+        <h5>RANDOM MAG</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti quam voluptatum vel repellat ab similique
+          molestias molestiae ea omnis eos, id asperiores est praesentium, voluptate officia nulla aspernatur sequi
+          aliquam.</p>
+      </div>
+    </div>
+    <div class="row expanded">
+      <div class="medium-6 columns">
+        <ul class="menu">
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Partner</a></li>
+          <li><a href="#">Explore</a></li>
         </ul>
-      </aside>
-    </main>
-
-    <footer>
-      <p>&copy; 2023 My Website. All rights reserved.</p>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
+      </div>
+      <div class="medium-6 columns">
+        <ul class="menu align-right">
+          <li class="menu-text">Copyright © 2023 Team_One</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script src="assets\js\script.js"></script>
+  <script>
+      $(document).foundation();
+  </script>
 </body>
 </html>
