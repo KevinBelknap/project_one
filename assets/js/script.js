@@ -101,3 +101,32 @@ function populateArticle(article, elementId) {
 }
 // Fetch the news data when the page loads
 getNewsData();
+
+function updateBreakingNews(articles) {
+    const breakingNewsDivs = document.querySelectorAll('.row.small-up-3.medium-up-4.large-up-5 .column');
+    
+    for (let i = 0; i < breakingNewsDivs.length; i++) {
+      if (articles[i]) {
+        const imgElement = breakingNewsDivs[i].querySelector('img');
+        const linkElement = breakingNewsDivs[i].querySelector('.article-link');
+        
+        imgElement.src = articles[i].image;
+        imgElement.alt = articles[i].title;
+        
+        linkElement.href = articles[i].url;
+      }
+    }
+  }
+  
+  function getBreakingNewsData() {
+    fetch(gNewsApiUrl)
+      .then(response => response.json())
+      .then(data => {
+        updateBreakingNews(data.articles);
+      })
+      .catch(error => {
+        console.error('Error fetching news data:', error);
+      });
+  }
+  
+  getBreakingNewsData();
