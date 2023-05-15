@@ -1,6 +1,6 @@
 const apiKey = '8cf59100d539bf9363c2f7f6beb01c19';
-const newsApiKey ='5e2366fdaaed4cd8a56f4864df96e366'
-const newsApiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8aaac5d710ff7de69478231a29c8c791"
+const gNewsApiKey = 'b31a28696095a791c50b6b1eced1680e';
+const gNewsApiUrl = `https://gnews.io/api/v4/top-headlines?token=${gNewsApiKey}&lang=en`;
 
 const WapiKey = 'e6e9cf82d2a043fa9be232847230905';
 const locationEl = document.querySelector('.location');
@@ -55,3 +55,49 @@ searchInput.addEventListener('keypress', (e) => {
         }
     }
 });
+
+
+function getNewsData() {
+    fetch(gNewsApiUrl)
+        .then(response => response.json())
+        .then(data => {
+            updateNewsInfo(data.articles);
+        })
+        .catch(error => {
+            console.error('Error fetching news data:', error);
+        });
+}
+function updateNewsInfo(articles) {
+    // Check if there are at least 3 articles
+    if (articles.length < 3) {
+        console.error('Not enough articles');
+        return;
+    }
+    // Populate main article
+    populateArticle(articles[0], 'main-article');
+    // Populate secondary articles
+    populateArticle(articles[1], 'secondary-articles');
+    populateArticle(articles[2], 'secondary-articles');
+}
+function populateArticle(article, elementId) {
+    // Create article content
+    const title = document.createElement('h3');
+    title.textContent = article.title;
+    const description = document.createElement('p');
+    description.textContent = article.description;
+    const link = document.createElement('a');
+    link.href = article.url;
+    link.textContent = 'Read more...';
+    const image = document.createElement('img');
+    image.src = article.image;
+    // Clear existing content
+    const element = document.getElementById(elementId);
+    element.innerHTML = '';
+    // Append new content
+    element.appendChild(image);
+    element.appendChild(title);
+    element.appendChild(description);
+    element.appendChild(link);
+}
+// Fetch the news data when the page loads
+getNewsData();
