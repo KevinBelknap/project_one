@@ -118,3 +118,35 @@ function updateBreakingNews(articles) {
   }
   
   getBreakingNewsData();
+
+  const emailInput = document.getElementById('email-input');
+const emailSubmitButton = document.getElementById('email-submit-button');
+
+function addEmailToContactList(email) {
+    let contactList = localStorage.getItem('contactList');
+    if (contactList) {
+        contactList = JSON.parse(contactList);
+    } else {
+        contactList = [];
+    }
+    contactList.push(email);
+    localStorage.setItem('contactList', JSON.stringify(contactList));
+}
+
+emailSubmitButton.addEventListener('click', () => {
+    const email = emailInput.value;
+    if (email) {
+        addEmailToContactList(email);
+        emailInput.value = '';
+    }
+});
+
+emailInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const email = emailInput.value;
+        if (email) {
+            addEmailToContactList(email);
+            emailInput.value = '';
+        }
+    }
+});
