@@ -4,7 +4,7 @@ body {
   font-family: "Georgia", serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
+  color: #d35c5c;
   margin: 0;
   padding: 0;
 }
@@ -14,11 +14,12 @@ header {
   border-bottom: 1px solid #ccc;
 }
 footer {
-  background-color: #333;
+
   padding: 10px;
   text-align: center;
   font-size: 14px;
   margin-top: 30px;
+
 }
 footer {
   background-color: #333;
@@ -42,4 +43,3 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
