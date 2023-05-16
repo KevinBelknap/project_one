@@ -10,109 +10,36 @@ body {
 }
 /* Header styles */
 header {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   border-bottom: 1px solid #ccc;
-  padding: 10px;
 }
-/* Logo styles */
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-/* Navigation styles */
-
-/* Main content styles */
-.main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-/* Breaking news article styles */
-.breaking-news {
-  width: 100%;
-  margin-bottom: 30px;
-}
-.breaking-news h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.breaking-news p {
-  margin-bottom: 10px;
-}
-.breaking-news img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-/* Related content styles */
-.related-content {
-  width: 65%;
-}
-.related-content h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-.related-content .article {
-  margin-bottom: 30px;
-}
-.related-content .article h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.related-content .article p {
-  margin-bottom: 10px;
-}
-.related-content .article img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-.related-content .article blockquote {
-  font-style: italic;
-  border-left: 3px solid #ccc;
-  padding-left: 10px;
-}
-/* Sidebar styles */
-.sidebar {
-  width: 30%;
-}
-.sidebar .article {
-  margin-bottom: 20px;
-}
-.sidebar .article h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.sidebar .article p {
-  margin-bottom: 10px;
-}
-.sidebar .article img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-.sidebar .article blockquote {
-  font-style: italic;
-  border-left: 3px solid #ccc;
-  padding-left: 10px;
-}
-/* Footer styles */
 footer {
-  background-color: #F1F1F1;
+  background-color: #333;
   padding: 10px;
   text-align: center;
   font-size: 14px;
   margin-top: 30px;
+}
+footer {
+  background-color: #333;
+  color: #333;
+  text-align: center;
+}
+
+footer ul.menu {
+  text-align: center;
+}
+
+footer ul.menu li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
