@@ -10,7 +10,7 @@ This site is beyond easy to use. Simply open the link to the deployed site bring
 
 ## Screenshot of deployed site
 
-![This is a screenshot of the site after being fully optimised and set up atfer one week of building of and bug testing](/assets/Pictures/NewsiteSC.png)\
+![This is a screenshot of the site after being fully optimised and set up atfer one week of building of and bug testing](/assets/Pictures/NewsiteSC.png)
 
 ## link to deployed site
 
