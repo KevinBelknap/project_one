@@ -15,3 +15,15 @@ This site is beyond easy to use. Simply open the link to the deployed site bring
 ## link to deployed site
 
 https://kevinbelknap.github.io/project_one/
+
+## Resource links
+
+https://gnews.io
+
+https://www.weatherapi.com
+
+https://get.foundation/index.html
+
+## Google slide link 
+
+https://docs.google.com/presentation/d/1h0RYIO6gGgxuQE4h6zuSgOwrFy_E_Ycv9IuWQ-sYSHY/edit?usp=sharing
